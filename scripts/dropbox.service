@@ -1,0 +1,11 @@
+[Unit]
+Description=Dropbox Service
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/opt/dropbox/dropboxd
+User=nikolako
+
+[Install]
+WantedBy=multi-user.target

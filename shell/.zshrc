@@ -13,9 +13,16 @@ SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-# Aliases
+#Stuff
+autoload -U colors && colors
+#Aliases
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias ll='ls -l --color=auto'
 alias lla='ls -al --color=auto'
+alias pls='sudo $(fc -ln -1)'
+
+#PROMPT
+PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%m%{$fg[red]%} > %{$reset_color%}"
+RPROMPT="%{$fg[magenta]%}%3d%{$reset_color%}" 
