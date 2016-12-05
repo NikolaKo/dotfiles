@@ -1,0 +1,137 @@
+
+URxvt.letterSpace: -1 
+URxvt.scrollBar: false
+URxvt.font:     xft:dejavu sans mono:size=10:style=Book
+URxvt.boldFont: xft:dejavu sans mono:size=10:style=Bold
+URxvt.italicFont: xft:dejavu sans mono:size=10:style=Oblique
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+
+! 3024 Dark color schemee
+! special
+*.foreground:   #a5a2a2
+*.background:   #090300
+*.cursorColor:  #a5a2a2
+! ! black
+*.color0:       #090300
+*.color8:       #5c5855
+! ! red
+*.color1:       #db2d20
+*.color9:       #db2d20
+! ! green
+*.color2:       #01a252
+*.color10:      #01a252
+! ! yellow
+*.color3:       #fded02
+*.color11:      #fded02
+! ! blue
+*.color4:       #01a0e4
+*.color12:      #01a0e4
+! ! magenta
+*.color5:       #a16a94
+*.color13:      #a16a94
+! ! cyan
+*.color6:       #b5e4f4
+*.color14:      #b5e4f4
+! ! white
+*.color7:       #a5a2a2
+*.color15:      #f7f7f7
+
+
+! DefaultDark from terminal.sexy
+! special
+!*.foreground:   #d0d0d0
+!*.background:   #151515
+!*.cursorColor:  #d0d0d0
+! ! black
+!*.color0:       #151515
+!*.color8:       #505050
+! ! red
+!*.color1:       #ac4142
+!*.color9:       #ac4142
+! ! green
+!*.color2:       #90a959
+!*.color10:      #90a959
+! ! yellow
+!*.color3:       #f4bf75
+!*.color11:      #f4bf75
+! ! blue
+!*.color4:       #6a9fb5
+!*.color12:      #6a9fb5
+! ! magenta
+!*.color5:       #aa759f
+!*.color13:      #aa759f
+! ! cyan
+!*.color6:       #75b5aa
+!*.color14:      #75b5aa
+! ! white
+!*.color7:       #d0d0d0
+!*.color15:      #f5f5f5
+
+! Monokai color scheme 
+! special
+!*.foreground:   #f8f8f2
+!*.background:   #272822
+!*.cursorColor:  #f8f8f2
+! black
+!*.color0:       #272822
+!*.color8:       #75715e
+! red
+!*.color1:       #f92672
+!*.color9:       #f92672
+! green
+!*.color2:       #a6e22e
+!*.color10:      #a6e22e
+! yellow
+!*.color3:       #f4bf75
+!*.color11:      #f4bf75
+! blue
+!*.color4:       #66d9ef
+!*.color12:      #66d9ef
+! magenta
+!*.color5:       #ae81ff
+!*.color13:      #ae81ff
+! cyan
+!*.color6:       #a1efe4
+!*.color14:      #a1efe4
+! white
+!*.color7:       #f8f8f2
+!*.color15:      #f9f8f5
+
+
+! Solarized color scheme
+! special
+! *.foreground:   #d0d0d0
+! *.background:   #151515
+! *.cursorColor:  #d0d0d0
+! ! black
+! *.color0:       #151515
+! *.color8:       #505050
+! ! red
+! *.color1:       #ac4142
+! *.color9:       #ac4142
+! ! green
+! *.color2:       #90a959
+! *.color10:      #90a959
+! ! yellow
+! *.color3:       #f4bf75
+! *.color11:      #f4bf75
+! ! blue
+! *.color4:       #6a9fb5
+! *.color12:      #6a9fb5
+! ! magenta
+! *.color5:       #aa759f
+! *.color13:      #aa759f
+! ! cyan
+! *.color6:       #75b5aa
+! *.color14:      #75b5aa
+! ! white
+! *.color7:       #d0d0d0
+! *.color15:      #f5f5f5
