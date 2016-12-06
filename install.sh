@@ -7,5 +7,6 @@ cp ./shell/.zshrc ~/.zshrc
 
 #xresources
 cp ./.Xresources ~/.Xresources
+xrdb ~/.Xresources
 
 
