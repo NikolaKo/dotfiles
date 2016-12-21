@@ -22,6 +22,10 @@ alias rm='rm -i'
 alias ll='ls -l --color=auto'
 alias lla='ls -al --color=auto'
 alias pls='sudo $(fc -ln -1)'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 #PROMPT
 PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%m%{$fg[red]%} > %{$reset_color%}"
