@@ -4,6 +4,13 @@ URxvt.scrollBar: false
 URxvt.font:     xft:dejavu sans mono:size=10:style=Book
 URxvt.boldFont: xft:dejavu sans mono:size=10:style=Bold
 URxvt.italicFont: xft:dejavu sans mono:size=10:style=Oblique
+URxvt.saveLines: 30500
+
+! Perl extensions
+urxvt.perl-ext-common: default,matcher
+! Open urls in browser with Control-Click
+urxvt.urlLauncher: /usr/bin/firefox
+urxvt.matcher.button: C1
 
 Xft.antialias: 1
 Xft.autohint: 0
