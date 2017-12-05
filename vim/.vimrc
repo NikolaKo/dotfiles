@@ -26,4 +26,14 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'romainl/vim-cool'
+Plug 'morhetz/gruvbox'
 call plug#end()
+
+colorscheme gruvbox
+set termguicolors
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_bold = '1'
+let g:gruvbox_italic = '1'
+let g:gruvbox_underline = '1'
+let g:gruvbox_undercurl = '1'
+set background=dark
