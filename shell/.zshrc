@@ -30,3 +30,6 @@ alias .....='cd ../../../..'
 #PROMPT
 PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%m%{$fg[red]%} > %{$reset_color%}"
 RPROMPT="%{$fg[magenta]%}%3d%{$reset_color%}" 
+
+#Env variables
+export EDITOR=vim
