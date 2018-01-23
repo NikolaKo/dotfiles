@@ -14,3 +14,6 @@ cp ./i3/config ~/.config/i3/config
 
 #vim
 cp ./vim/.vimrc ~/.vimrc
+
+#termite
+cp ./termite/config ~/.config/termite/config

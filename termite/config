@@ -64,7 +64,7 @@ search_wrap = true
  foreground      = #a5a2a2
  foreground_bold = #d6d5d4
  cursor          = #d6d5d4
- background      = #090300
+ background      = #1d2021
  # 16 color space
  # Black, Gray, Silver, White
  color0  = #090300
