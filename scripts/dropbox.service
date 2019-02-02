@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Restart=always
-ExecStart=/opt/dropbox/dropboxd
+ExecStart=/home/nikolako/.dropbox-dist/dropboxd
 User=nikolako
 
 [Install]
