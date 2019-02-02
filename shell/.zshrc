@@ -31,5 +31,16 @@ alias .....='cd ../../../..'
 PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%m%{$fg[red]%} > %{$reset_color%}"
 RPROMPT="%{$fg[magenta]%}%3d%{$reset_color%}" 
 
+#Vi mode settings
+bindkey -v
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%}>% "
+    PROMPT="%{$fg[cyan]%}%n%{$reset_color%}@%m%{$fg[red]%} >${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} %{$reset_color%}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
+
 #Env variables
 export EDITOR=vim
