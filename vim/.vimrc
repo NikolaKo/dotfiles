@@ -39,6 +39,18 @@ nnoremap <silent> ]T : tlast <CR>
 nnoremap <silent> [w <C-W>W 
 nnoremap <silent> ]w <C-W>w 
 
+" partial copy/paste from vim-unimpaired
+function! s:BlankUp(count) abort
+  put!=repeat(nr2char(10), a:count)
+endfunction
+
+function! s:BlankDown(count) abort
+  put =repeat(nr2char(10), a:count)
+endfunction
+
+nnoremap <silent> [<Space> : <C-U>call <SID>BlankUp(v:count1)<CR>
+nnoremap <silent> ]<Space> : <C-U>call <SID>BlankDown(v:count1)<CR>
+
 
 
 
