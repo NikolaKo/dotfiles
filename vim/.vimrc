@@ -16,18 +16,20 @@ set hidden
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" window/general/commands
+"""" window/general/commands
+"""" s as prefix
 nnoremap <silent> sw : w <CR>
 nnoremap <silent> sbs : w !sudo tee % <CR>
 nnoremap <silent> sbd : bdelete <CR>
 
-" search/move through text/files/buffers/tree/tags/etc
-" FZF stuff
+"""" search/move through text/files/buffers/tree/tags/FZF
+"""" \ as prefix
 nnoremap <silent> \f : Files <CR>
 nnoremap <silent> \b : Buffers <CR>
 nnoremap <silent> \l : Lines <CR>
 
-" some unimpaired stuff
+"""" some unimpaired stuff - cycle through 
+"""" [] as prefix
 nnoremap <silent> [b : bprevious <CR>
 nnoremap <silent> ]b : bnext <CR>
 nnoremap <silent> [B : bfirst <CR>
@@ -39,7 +41,7 @@ nnoremap <silent> ]T : tlast <CR>
 nnoremap <silent> [w <C-W>W 
 nnoremap <silent> ]w <C-W>w 
 
-" partial copy/paste from vim-unimpaired
+" partial copy/paste of functions from vim-unimpaired
 function! s:BlankUp(count) abort
   put!=repeat(nr2char(10), a:count)
 endfunction
@@ -51,7 +53,39 @@ endfunction
 nnoremap <silent> [<Space> : <C-U>call <SID>BlankUp(v:count1)<CR>
 nnoremap <silent> ]<Space> : <C-U>call <SID>BlankDown(v:count1)<CR>
 
+" partial copy/paste of functions from vim-unimpaired
+function! s:ExecMove(cmd) abort
+  let old_fdm = &foldmethod
+  if old_fdm !=# 'manual'
+    let &foldmethod = 'manual'
+  endif
+  normal! m`
+  silent! exe a:cmd
+  norm! ``
+  if old_fdm !=# 'manual'
+    let &foldmethod = old_fdm
+  endif
+endfunction
 
+function! s:Move(cmd, count, map) abort
+  call s:ExecMove('move'.a:cmd.a:count)
+  silent! call repeat#set("\<Plug>unimpairedMove".a:map, a:count)
+endfunction
+
+function! s:MoveSelectionUp(count) abort
+  call s:ExecMove("'<,'>move'<--".a:count)
+  silent! call repeat#set("\<Plug>unimpairedMoveSelectionUp", a:count)
+endfunction
+
+function! s:MoveSelectionDown(count) abort
+  call s:ExecMove("'<,'>move'>+".a:count)
+  silent! call repeat#set("\<Plug>unimpairedMoveSelectionDown", a:count)
+endfunction
+
+nnoremap <silent> [e : <C-U>call <SID>Move('--',v:count1,'Up')<CR>
+nnoremap <silent> ]e : <C-U>call <SID>Move('+',v:count1,'Down')<CR>
+noremap  <silent> [e : <C-U>call <SID>MoveSelectionUp(v:count1)<CR>
+noremap  <silent> ]e : <C-U>call <SID>MoveSelectionDown(v:count1)<CR>
 
 
 """""""""" plugins go here
