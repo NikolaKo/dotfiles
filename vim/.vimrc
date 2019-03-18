@@ -27,11 +27,19 @@ nnoremap <silent> \f : Files <CR>
 nnoremap <silent> \b : Buffers <CR>
 nnoremap <silent> \l : Lines <CR>
 
-" unimpaired stuff
+" some unimpaired stuff
 nnoremap <silent> [b : bprevious <CR>
 nnoremap <silent> ]b : bnext <CR>
 nnoremap <silent> [B : bfirst <CR>
 nnoremap <silent> ]B : blast <CR>
+nnoremap <silent> [t : tprevious <CR>
+nnoremap <silent> ]t : tnext <CR>
+nnoremap <silent> [T : tfirst <CR>
+nnoremap <silent> ]T : tlast <CR>
+nnoremap <silent> [w <C-W>W 
+nnoremap <silent> ]w <C-W>w 
+
+
 
 
 """""""""" plugins go here
