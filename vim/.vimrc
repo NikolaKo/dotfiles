@@ -1,4 +1,3 @@
-
 """""""""" settings go here
 set number
 syntax on
@@ -18,15 +17,27 @@ cnoremap <C-n> <Down>
 
 """" window/general/commands
 """" s as prefix
-nnoremap <silent> sw : w <CR>
+nnoremap <silent> ss : w <CR>
 nnoremap <silent> sbs : w !sudo tee % <CR>
 nnoremap <silent> sbd : bdelete <CR>
+nnoremap <silent> sws : vnew  <bar> : Files <CR>
+nnoremap <silent> swh : new <bar> : Files <CR>
 
 """" search/move through text/files/buffers/tree/tags/FZF
 """" \ as prefix
 nnoremap <silent> \f : Files <CR>
 nnoremap <silent> \b : Buffers <CR>
 nnoremap <silent> \l : Lines <CR>
+
+"""" work with code/text
+"""" <Space> as prefix
+nnoremap <silent> <Space>y "+y
+vnoremap <silent> <Space>y "+y
+nnoremap <silent> <Space>ps "+p
+vnoremap <silent> <Space>ps "+p
+nnoremap <silent> <Space>pp "*p
+nnoremap <silent> <Space>p0 "0p
+vnoremap <silent> <Space>p0 "0p
 
 """" some unimpaired stuff - cycle through 
 """" [] as prefix
