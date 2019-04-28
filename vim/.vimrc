@@ -28,6 +28,7 @@ nnoremap <silent> swh : new <bar> : Files <CR>
 nnoremap <silent> \f : Files <CR>
 nnoremap <silent> \b : Buffers <CR>
 nnoremap <silent> \l : Lines <CR>
+nnoremap <silent> \r : call RangeChooser() <CR>
 
 """" work with code/text
 """" <Space> as prefix
@@ -51,8 +52,45 @@ nnoremap <silent> [T : tfirst <CR>
 nnoremap <silent> ]T : tlast <CR>
 nnoremap <silent> [w <C-W>W 
 nnoremap <silent> ]w <C-W>w 
+nnoremap <silent> [e : <C-U>call <SID>Move('--',v:count1,'Up')<CR>
+nnoremap <silent> ]e : <C-U>call <SID>Move('+',v:count1,'Down')<CR>
+noremap  <silent> [e : <C-U>call <SID>MoveSelectionUp(v:count1)<CR>
+noremap  <silent> ]e : <C-U>call <SID>MoveSelectionDown(v:count1)<CR>
+nnoremap <silent> [<Space> : <C-U>call <SID>BlankUp(v:count1)<CR>
+nnoremap <silent> ]<Space> : <C-U>call <SID>BlankDown(v:count1)<CR>
 
-" partial copy/paste of functions from vim-unimpaired
+
+"""""""""" functions go here
+
+" ranger integration from here:  https://github.com/ranger/ranger/blob/master/examples/vim_file_chooser.vim
+function! RangeChooser()
+    let temp = tempname()
+    if has("gui_running")
+        exec 'silent !xterm -e ranger --choosefiles=' . shellescape(temp)
+    else
+        exec 'silent !ranger --choosefiles=' . shellescape(temp)
+    endif
+    if !filereadable(temp)
+        redraw!
+        " Nothing to read.
+        return
+    endif
+    let names = readfile(temp)
+    if empty(names)
+        redraw!
+        " Nothing to open.
+        return
+    endif
+    " Edit the first item.
+    exec 'edit ' . fnameescape(names[0])
+    " Add any remaning items to the arg list/buffer list.
+    for name in names[1:]
+        exec 'argadd ' . fnameescape(name)
+    endfor
+    redraw!
+endfunction
+
+"plugins partial copy/paste of functions from vim-unimpaired
 function! s:BlankUp(count) abort
   put!=repeat(nr2char(10), a:count)
 endfunction
@@ -61,10 +99,6 @@ function! s:BlankDown(count) abort
   put =repeat(nr2char(10), a:count)
 endfunction
 
-nnoremap <silent> [<Space> : <C-U>call <SID>BlankUp(v:count1)<CR>
-nnoremap <silent> ]<Space> : <C-U>call <SID>BlankDown(v:count1)<CR>
-
-" partial copy/paste of functions from vim-unimpaired
 function! s:ExecMove(cmd) abort
   let old_fdm = &foldmethod
   if old_fdm !=# 'manual'
@@ -91,13 +125,8 @@ endfunction
 function! s:MoveSelectionDown(count) abort
   call s:ExecMove("'<,'>move'>+".a:count)
   silent! call repeat#set("\<Plug>unimpairedMoveSelectionDown", a:count)
+
 endfunction
-
-nnoremap <silent> [e : <C-U>call <SID>Move('--',v:count1,'Up')<CR>
-nnoremap <silent> ]e : <C-U>call <SID>Move('+',v:count1,'Down')<CR>
-noremap  <silent> [e : <C-U>call <SID>MoveSelectionUp(v:count1)<CR>
-noremap  <silent> ]e : <C-U>call <SID>MoveSelectionDown(v:count1)<CR>
-
 
 """""""""" plugins go here
 if empty(glob('~/.vim/autoload/plug.vim'))
