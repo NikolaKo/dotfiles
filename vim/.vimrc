@@ -29,6 +29,7 @@ nnoremap <silent> \f : Files <CR>
 nnoremap <silent> \b : Buffers <CR>
 nnoremap <silent> \l : Lines <CR>
 nnoremap <silent> \r : call RangeChooser() <CR>
+nnoremap  \g : Rg 
 
 """" work with code/text
 """" <Space> as prefix
@@ -50,6 +51,10 @@ nnoremap <silent> [t : tprevious <CR>
 nnoremap <silent> ]t : tnext <CR>
 nnoremap <silent> [T : tfirst <CR>
 nnoremap <silent> ]T : tlast <CR>
+nnoremap <silent> [q :cprevious <CR>
+nnoremap <silent> ]q :cnext <CR>
+nnoremap <silent> [Q :cfirst <CR>
+nnoremap <silent> ]Q :clast <CR>
 nnoremap <silent> [w <C-W>W 
 nnoremap <silent> ]w <C-W>w 
 nnoremap <silent> [e : <C-U>call <SID>Move('--',v:count1,'Up')<CR>
