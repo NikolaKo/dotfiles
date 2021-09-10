@@ -11,6 +11,7 @@ xrdb ~/.Xresources
 
 #i3
 cp ./i3/config ~/.config/i3/config
+cp ./i3/plasma-i3.desktop /usr/share/xsessions/
 
 #vim
 cp ./vim/.vimrc ~/.vimrc
