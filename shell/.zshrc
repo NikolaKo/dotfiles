@@ -10,6 +10,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_DUPS
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
